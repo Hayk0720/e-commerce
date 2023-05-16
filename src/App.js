@@ -1,12 +1,48 @@
-import Header from './components/Header'
+
+import React,{useState} from 'react';
+import Header from './components/Header';
 import Footer from './components/Footer';
-function App() {
-  return (
-    <div className='wrapper'>
-      <Header/>
-      <Footer/>
-    </div>
-  );
+import Items from './components/Items';
+
+
+function App()  {
+ const [items,setItems]=useState
+    ([
+          {id:1,
+          title:'chair',
+          img:'chair img',
+          desc:'lorem chair',
+          price:'40.99'
+        },
+        {id:2,
+          title:'table',
+          img:'table img',
+          desc:'lorem table',
+          price:'60.99'
+        },
+        {id:3,
+          title:'armchair',
+          img:'armchair img',
+          desc:'lorem armchair',
+          price:'110.99'
+        },
+        {id:4,
+          title:'lamp',
+          img:'lamp img',
+          desc:'lorem lamp',
+          price:'10.99'
+        },
+        ])
+   
+   
+    return (
+      <div className='wrapper'>
+        <Header/>
+        <Items items = {items}/>
+        <Footer/>
+      </div>
+    )
+
 }
 
 export default App;
