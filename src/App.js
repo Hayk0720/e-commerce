@@ -18,11 +18,16 @@ const addToOrder = (addItems)=>{
   })
   if(!isInArray)
   setorderItem([...orderItem,addItems])
-  console.log(orderItem)
+  }
+  const deleteOrder = (id)=>{ 
+    setorderItem(orderItem.filter(el=>
+      el.id !==id
+    ))
+
   }
     return (
       <div className='wrapper'>
-        <Header orders = {orderItem} />
+        <Header orders = {orderItem} onDelete = {deleteOrder} />
         <Items items = {item} onAdd = {addToOrder}/>
         <Footer/>
       </div>

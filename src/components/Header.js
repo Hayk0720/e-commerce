@@ -3,18 +3,22 @@ import { FaShoppingCart } from "react-icons/fa";
 import Order from './Order';
 export default function Header(props) {
   let [cartOpen,setCartOpen] = useState(false)
-
+//new Intl.NumberFormat().format(sum) ------>> showing number with two digits after dot
 const showOrders = (props)=>{
-  return (
-    <div>
-      {
-        props.orders.map( el => 
-           
-          ( <Order   key = {el.id} 
+  let sum = 0;
+  props.orders.forEach(el=>{
+    sum += Number.parseFloat(el.price)
+  })
+  return (<div>
+      {props.orders.map( el =>            
+          ( <Order   
+            onDelete = {props.onDelete}
+            key = {el.id} 
            item = {el}/>)
          
-         )
-      }
+        )}
+        
+        <p className='totalSum'>Sum: {new Intl.NumberFormat().format(sum)}$</p>
     </div>
   )
 }
