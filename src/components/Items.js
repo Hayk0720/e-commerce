@@ -4,11 +4,11 @@ import Item from './Item'
 export default function Items ({items})  {
   
    return (
-    <div>
+    <main>
     {items.map(el=>(
      <Item key = {el.id} item = {el}/>
     ))}
-  </div>
+  </main>
    )
  
 }
