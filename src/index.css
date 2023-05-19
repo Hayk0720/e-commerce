@@ -20,6 +20,7 @@ header{
 header .logo{
   font-weight: 600;
   font-size: 20px;
+  cursor: pointer;
 }
 .shop-cart-button{
   float: right;
@@ -93,6 +94,7 @@ header ul.nav{
 header ul.nav li{
   display: inline;
   margin-left: 25px;
+  cursor: pointer;
 }
 header .presentation{
   margin: 50px 0;

@@ -14,10 +14,8 @@ const showOrders = (props)=>{
           ( <Order   
             onDelete = {props.onDelete}
             key = {el.id} 
-           item = {el}/>)
-         
-        )}
-        
+           item = {el}/>)         
+        )}        
         <p className='totalSum'>Sum: {new Intl.NumberFormat().format(sum)}$</p>
     </div>
   )
@@ -29,11 +27,13 @@ const showNothing = (props)=>{
     </div>
   )
 }
-
+const  refreshPage=()=> {
+  window.location.reload(false);
+}
   return (
     <header>
       <div>
-        <span className='logo'>House Staff</span>
+        <span className='logo' onClick={refreshPage}>House Staff</span>
         <ul className='nav'>
             <li>About us</li>
             <li>Contacts</li>

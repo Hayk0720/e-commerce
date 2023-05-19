@@ -14,7 +14,7 @@ const [currentItems,setCurrentItems] = useState(item)
 const [showFullItem,setshowFullItem] = useState(false)
 const [FullItem,setFullItem] = useState({})
 
-const addToOrder = (addItems)=>{
+  const addToOrder = (addItems)=>{
   let isInArray = false
   orderItem.forEach(el=>{
     if(el.id ===addItems.id )
@@ -42,6 +42,7 @@ const addToOrder = (addItems)=>{
     setFullItem(item)
     setshowFullItem(!showFullItem)
   }
+  
     return (
       <div className='wrapper'>
         <Header orders = {orderItem} onDelete = {deleteOrder} />
